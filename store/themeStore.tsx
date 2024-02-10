@@ -1,9 +1,5 @@
+import { Theme } from "@/types/theme";
 import { create } from "zustand";
-
-interface Theme {
-  name: string;
-  videoId: string;
-}
 
 interface ThemeState {
   theme: Theme;
