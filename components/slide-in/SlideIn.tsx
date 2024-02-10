@@ -31,6 +31,7 @@ const SlideIn = () => {
       <nav className="flex gap-4 pb-8">
         {menuItems.map((item) => (
           <div
+            key={item.name}
             className={cn(
               "flex cursor-pointer",
               menu === item.name ? "text-primary" : "text-muted"
