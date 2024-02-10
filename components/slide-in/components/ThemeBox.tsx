@@ -6,7 +6,7 @@ const ThemeBox = ({
   themeImg,
 }: {
   themeName: string;
-  themeImg: string;
+  themeImg: string | null;
 }) => {
   const { setTheme } = useThemeStore();
   return (
@@ -18,7 +18,8 @@ const ThemeBox = ({
         src={`https://img.youtube.com/vi/${themeImg}/maxresdefault.jpg`}
         alt="video thumbnail"
         fill
-        className="hover:scale-125 transition-all opacity-"
+        className="hover:scale-125 transition-all opacity-90"
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
       />
       <span className="z-10 font-bold text-white">{themeName}</span>
     </div>
