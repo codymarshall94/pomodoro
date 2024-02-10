@@ -3,17 +3,24 @@ import { cn } from "@/lib/utils";
 import { useTimerStore } from "@/store/timeStore";
 
 const TimerTab = () => {
-  const { setMinutes, setSeconds, setIsCountingDown } = useTimerStore();
+  const {
+    userSetTime,
+    setMinutes,
+    setSeconds,
+    setIsCountingDown,
+    setUserSetTime,
+  } = useTimerStore();
 
   const handleSliderChange = (minutes: number[]) => {
     const extractedValue = minutes[0];
     setIsCountingDown(false);
+    setUserSetTime(extractedValue);
     setMinutes(extractedValue);
     setSeconds(0);
   };
   return (
     <Slider
-      defaultValue={[15]}
+      defaultValue={[userSetTime]}
       max={60}
       step={1}
       onValueChange={(value) => handleSliderChange(value)}
