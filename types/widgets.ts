@@ -6,11 +6,18 @@ export interface WidgetProps {
   toggleVisibility: (widgetId: string) => void;
 }
 
-export interface Widget {
-  id: string;
-  component: React.ReactNode;
+export interface WidgetOptions {
   opacity: number;
   visible: boolean;
+  color: string;
+}
+
+export interface Widget {
+  id: string;
+  name: string;
+  component: React.ReactNode;
+  content: any;
+  options: WidgetOptions;
   icon: React.ReactNode;
 }
 
@@ -22,7 +29,9 @@ export interface WidgetConfig {
 }
 
 export interface WidgetComponentProps {
+  name: string;
   children: React.ReactNode;
   opacity: number;
   widgetId: string;
+  color: string;
 }
