@@ -19,7 +19,7 @@ const Header = () => {
         {widgets.map((widget: Widget) => (
           <Button
             key={widget.id}
-            variant={widget.visible ? "secondary" : "ghost"}
+            variant={widget?.options.visible ? "secondary" : "ghost"}
             onClick={() => toggleWidgetVisibility(widget.id)}
           >
             {widget.icon}
