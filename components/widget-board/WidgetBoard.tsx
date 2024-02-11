@@ -12,11 +12,13 @@ const WidgetBoard = () => {
   return (
     <div className="grid grid-cols-3 grid-rows-2 gap-4 z-20 p-4 overflow-auto">
       {widgets.map((widget) =>
-        widget.visible ? (
+        widget.options.visible ? (
           <WidgetContainer
             key={widget.id}
-            opacity={widget.opacity}
+            opacity={widget.options.opacity}
+            color={widget.options.color}
             widgetId={widget.id}
+            name={widget.name}
           >
             {widget.component}
           </WidgetContainer>

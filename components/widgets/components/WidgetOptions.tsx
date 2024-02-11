@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useWidgetsStore } from "@/store/widgetStore";
+import WidgetColorPicker from "./WidgetColorPicker";
 
 const WidgetOptions = ({
   widgetId,
@@ -9,7 +10,7 @@ const WidgetOptions = ({
   widgetId: string;
   opacity: number;
 }) => {
-  const { updateWidgetOpacity } = useWidgetsStore();
+  const { updateWidgetProperty } = useWidgetsStore();
   return (
     <div className="flex flex-col gap-4">
       <Label htmlFor="opacity-slider">Opacity</Label>
@@ -19,8 +20,11 @@ const WidgetOptions = ({
         defaultValue={[opacity]}
         min={10}
         max={100}
-        onValueChange={(value) => updateWidgetOpacity(widgetId, value[0])}
+        onValueChange={(value) =>
+          updateWidgetProperty(widgetId, "opacity", value[0])
+        }
       />
+      <WidgetColorPicker widgetId={widgetId} />
     </div>
   );
 };
