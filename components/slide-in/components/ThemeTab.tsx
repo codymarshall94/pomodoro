@@ -31,7 +31,6 @@ const ThemeTab = () => {
 
   const handleSaveTheme = (data: any) => {
     const { themeName, videoId } = data;
-    console.log(data);
     const newTheme = {
       name: themeName,
       videoId: videoId,
