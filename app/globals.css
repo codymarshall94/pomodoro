@@ -24,6 +24,14 @@
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
+    --picker-red: 0, 70%, 50%;
+    --picker-green: 120, 40%, 50%;
+    --picker-blue: 210, 60%, 50%;
+    --picker-yellow: 60, 70%, 50%;
+    --picker-orange: 30, 70%, 50%;
+    --picker-teal: 180, 40%, 50%;
+    --picker-gray: 0, 0%, 50%;
+    --picker-purple: 262.1, 83.3%, 57.8%;
   }
 
   .dark {
@@ -46,6 +54,14 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
+    --picker-red: 0, 70%, 30%;
+    --picker-green: 120, 40%, 30%;
+    --picker-blue: 210, 60%, 30%;
+    --picker-yellow: 60, 70%, 30%;
+    --picker-orange: 30, 70%, 30%;
+    --picker-teal: 180, 40%, 30%;
+    --picker-gray: 0, 0%, 20%;
+    --picker-purple: 263.4, 70%, 50.4%;
   }
 }
 
