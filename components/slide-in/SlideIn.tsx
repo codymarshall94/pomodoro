@@ -5,6 +5,7 @@ import { Grid, Hourglass, Palette } from "lucide-react";
 import { useState } from "react";
 import ThemeTab from "./components/ThemeTab";
 import TimerTab from "./components/TimerTab";
+import WidgetTab from "./components/WidgetTab";
 
 type MenuItem = "Timer" | "Theme" | "Widgets";
 interface MenuItems {
@@ -28,23 +29,26 @@ const SlideIn = () => {
   return (
     <div className="slide-in">
       <h3 className="text-primary font-bold pb-8">Settings</h3>
-      <nav className="flex gap-4 pb-8">
-        {menuItems.map((item) => (
-          <div
-            key={item.name}
-            className={cn(
-              "flex cursor-pointer",
-              menu === item.name ? "text-primary" : "text-muted"
-            )}
-            onClick={() => handleMenuChange(item.name)}
-          >
-            {item.icon}
-            {item.name}
-          </div>
-        ))}
+      <nav>
+        <ul className="flex gap-4 pb-8">
+          {menuItems.map((item) => (
+            <li
+              key={item.name}
+              className={cn(
+                "flex cursor-pointer",
+                menu === item.name ? "text-primary" : "text-muted"
+              )}
+              onClick={() => handleMenuChange(item.name)}
+            >
+              {item.icon}
+              {item.name}
+            </li>
+          ))}
+        </ul>
       </nav>
       {menu === "Timer" && <TimerTab />}
       {menu === "Theme" && <ThemeTab />}
+      {menu === "Widgets" && <WidgetTab />}
     </div>
   );
 };
