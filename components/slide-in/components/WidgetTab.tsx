@@ -1,32 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import Notepad from "@/components/widgets/notepad/Notepad";
-import TodoList from "@/components/widgets/todo-list/TodoList";
+import { WidgetType, widgetTypes } from "@/constants/widgets";
 import { useWidgetsStore } from "@/store/widgetStore";
 import { Widget } from "@/types/widgets";
-import { List, Notebook } from "lucide-react";
-
-interface WidgetType {
-  id: string;
-  name: string;
-  component: React.ReactNode;
-  icon: React.ReactNode;
-}
-
-const widgetTypes: WidgetType[] = [
-  {
-    id: "todoList",
-    name: "Todo List",
-    component: <TodoList />,
-    icon: <List />,
-  },
-  {
-    id: "notepad",
-    name: "Notepad",
-    component: <Notepad />,
-    icon: <Notebook />,
-  },
-];
 
 const WidgetTab = () => {
   const { addWidget, removeWidget, widgets } = useWidgetsStore();
@@ -37,8 +12,12 @@ const WidgetTab = () => {
     } else {
       const newWidget: Widget = {
         ...widget,
-        opacity: 100,
-        visible: true,
+        options: {
+          opacity: 100,
+          visible: true,
+          color: "bg-card",
+        },
+        content: null,
       };
       addWidget(newWidget);
     }
