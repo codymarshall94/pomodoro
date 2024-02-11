@@ -1,6 +1,7 @@
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 import { useTimerStore } from "@/store/timeStore";
+import { Label } from "@radix-ui/react-label";
 
 const TimerTab = () => {
   const {
@@ -19,13 +20,16 @@ const TimerTab = () => {
     setSeconds(0);
   };
   return (
-    <Slider
-      defaultValue={[userSetTime]}
-      max={60}
-      step={1}
-      onValueChange={(value) => handleSliderChange(value)}
-      className={cn("w-[60%]")}
-    />
+    <div className="flex flex-col gap-4">
+      <Label htmlFor="set-time">Timer Length</Label>
+      <Slider
+        name="set-time"
+        defaultValue={[userSetTime]}
+        max={60}
+        step={1}
+        onValueChange={(value) => handleSliderChange(value)}
+      />
+    </div>
   );
 };
 
